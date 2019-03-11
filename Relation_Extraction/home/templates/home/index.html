@@ -1,0 +1,13 @@
+<h1>Search a relation to get the objects</h1>
+<form method='post' action="{% url 'home:index' %}">
+  {% csrf_token %}
+  Relation:<br>
+  <input type="text" placeholder="Type a relation" name='relation'><br>
+  <button type="submit" >Search</button>
+</form>
+
+<ul>
+{% for object in result %}
+<li>{{object}}</li>
+{% endfor %}
+</ul>
