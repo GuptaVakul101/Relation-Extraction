@@ -1,13 +1,25 @@
 <h1>Search a relation to get the objects</h1>
+
+<form method='post' enctype="multipart/form-data" action="{% url 'home:fill_data' %}">
+  {% csrf_token %}
+  Upload .csv file:
+  <input type="file" name="data_file"><br>
+  <button type="submit" >Upload</button>
+</form>
+
 <form method='post' action="{% url 'home:index' %}">
   {% csrf_token %}
   Relation:<br>
-  <input type="text" placeholder="Type a relation" name='relation'><br>
+  <select name='relation'>
+      {% for relation in all_relations %}
+            <option value='{{relation}}'>{{relation}}</option>
+      {% endfor %}
+  </select>
   <button type="submit" >Search</button>
 </form>
 
 <ul>
 {% for object in result %}
-<li>{{object}}</li>
+<li>{{object.object_1}} : {{object.object_1_type}} : {{object.object_2}} : {{object.object_2_type}} : {{object.relation}}</li>
 {% endfor %}
 </ul>
