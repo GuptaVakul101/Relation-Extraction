@@ -7,19 +7,20 @@ def index(request):
         form = SearchForm(request.POST)
         if form.is_valid():
             relation = form.cleaned_data['relation']
-            print(relation)
-            print(Object.objects.filter(object_1_type='Person'))
-            result = Object.objects.filter(relation='placeOfBirth')
+            NumberOfResults = form.cleaned_data['NumberOfResults']
+            result = Object.objects.filter(relation=relation)
+            result = result.order_by('?')
+            result = result[0:NumberOfResults]
             return render(request, 'home/index.html', {'form' : form, 'result': result})
     else:
         form = SearchForm()
         all_relations = Object.objects.values_list('relation', flat=True)
+        all_relations = all_relations.distinct()
         return render(request, 'home/index.html', {'form' : form, 'all_relations': all_relations})
 
 def fill_data(request):
     if request.method == "POST":
         form = FillDataForm(request.POST, request.FILES)
-        print(form.errors)
         if form.is_valid():
             if request.FILES.get('data_file', False):
                 data_file = request.FILES['data_file']
