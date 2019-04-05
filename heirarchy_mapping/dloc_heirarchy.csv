@@ -1,0 +1,83 @@
+administrativeDivision,"['lieutenancyArea', 'canton', 'ceremonialCounty', 'department', 'principalArea', 'metropolitanBorough', 'frazioni', 'arrondissement', 'administrativeDistrict', 'district', 'administrativeDivision', 'area', 'county']"
+area,"['principalArea', 'area', 'lieutenancyArea']"
+lieutenancyArea,['lieutenancyArea']
+principalArea,['principalArea']
+canton,['canton']
+county,"['ceremonialCounty', 'county']"
+ceremonialCounty,['ceremonialCounty']
+department,"['department', 'arrondissement']"
+arrondissement,['arrondissement']
+district,"['administrativeDistrict', 'district']"
+administrativeDistrict,['administrativeDistrict']
+frazioni,['frazioni']
+metropolitanBorough,['metropolitanBorough']
+archipelago,['archipelago']
+city,"['twinTown', 'city', 'largestCity', 'nearestCity', 'capitalCity']"
+capitalCity,['capitalCity']
+largestCity,['largestCity']
+nearestCity,['nearestCity']
+twinTown,['twinTown']
+country,"['country', 'twinCountry']"
+twinCountry,['twinCountry']
+crosses,['crosses']
+hasJunctionWith,['hasJunctionWith']
+highestPlace,['highestPlace']
+island,"['majorIsland', 'island']"
+majorIsland,['majorIsland']
+isPartOf,['isPartOf']
+lake,['lake']
+lakeInflow,['lakeInflow']
+lakeOutflow,['lakeOutflow']
+locatedAt,['locatedAt']
+locatedInArea,['locatedInArea']
+lowestPlace,['lowestPlace']
+mountain,"['parentMountainPeak', 'mountainRange', 'mountain', 'lowestMountain']"
+lowestMountain,['lowestMountain']
+mountainRange,['mountainRange']
+parentMountainPeak,['parentMountainPeak']
+municipality,"['municipality', 'municipalAssociations', 'neighboringMunicipality']"
+municipalAssociations,['municipalAssociations']
+neighboringMunicipality,['neighboringMunicipality']
+province,['province']
+region,"['subregion', 'region']"
+subregion,['subregion']
+river,['river']
+mouthOfWatercourse,"['mouthCountry', 'mouthPlace', 'riverMouth', 'mouthRegion', 'mouthOfWatercourse']"
+mouthCountry,['mouthCountry']
+mouthPlace,['mouthPlace']
+riverMouth,['riverMouth']
+mouthRegion,['mouthRegion']
+routeLocation,"['routeEnd', 'routeStart', 'routeJunction', 'routeLocation']"
+routeEnd,['routeEnd']
+routeJunction,['routeJunction']
+routeStart,['routeStart']
+sharesBorderWith,['sharesBorderWith']
+sourceOfWatercourse,"['sourcePlace', 'sourceMountain', 'sourceOfWatercourse', 'sourceRegion', 'sourceCountry']"
+sourceCountry,['sourceCountry']
+sourceMountain,['sourceMountain']
+sourcePlace,['sourcePlace']
+sourceRegion,['sourceRegion']
+state,"['state', 'federalState']"
+federalState,['federalState']
+territory,['territory']
+tributary,"['tributary', 'rightTributary', 'leftTributary']"
+leftTributary,['leftTributary']
+rightTributary,['rightTributary']
+architect,['architect']
+builder,['builder']
+governingBody,['governingBody']
+maintainedBy,['maintainedBy']
+managedBy,['managedBy']
+operator,"['operator', 'trainOperator']"
+trainOperator,['trainOperator']
+owner,['owner']
+leaderParty,['leaderParty']
+tenant,['tenant']
+designer,['designer']
+discoverer,['discoverer']
+firstAscentPerson,['firstAscentPerson']
+founder,['founder']
+leader,['leader']
+officeholder,"['mayor', 'officeholder']"
+mayor,['mayor']
+saint,['saint']

@@ -1,0 +1,78 @@
+ancestralHome,['ancestralHome']
+archivesAt,['archivesAt']
+battleFoughtAt,['battleFoughtAt']
+country,"['country', 'countryOfOrigin', 'countryOfCitizenship', 'countryForSport']"
+countryForSport,['countryForSport']
+countryOfCitizenship,['countryOfCitizenship']
+countryOfOrigin,['countryOfOrigin']
+district,"['electoralDistrict', 'district']"
+electoralDistrict,['electoralDistrict']
+exhibitionHistory,['exhibitionHistory']
+locatedAt,['locatedAt']
+notableWork,['notableWork']
+officeholder,"['commanderOf', 'officeholder']"
+commanderOf,['commanderOf']
+ownerOf,['ownerOf']
+permanentResidentOf,['permanentResidentOf']
+placeOfBirth,['placeOfBirth']
+placeOfBurial,['placeOfBurial']
+placeOfDeath,['placeOfDeath']
+placeOfDetention,['placeOfDetention']
+residence,['residence']
+workLocation,['workLocation']
+affiliation,['affiliation']
+agency,['agency']
+allegiance,['allegiance']
+associatedWith,"['professorshipAt', 'associatedWith', 'league', 'institution']"
+league,['league']
+institution,"['professorshipAt', 'institution']"
+professorshipAt,['professorshipAt']
+awardedBy,['awardedBy']
+chairpersonOf,['chairpersonOf']
+chiefExecutiveOfficerOf,['chiefExecutiveOfficerOf']
+coachOf,"['headCoachOf', 'coachOf']"
+headCoachOf,['headCoachOf']
+directorOf,['directorOf']
+draftedBy,['draftedBy']
+educatedAt,['educatedAt']
+employer,['employer']
+family,['family']
+founderOf,['founderOf']
+isPartOf,['isPartOf']
+managerOf,['managerOf']
+memberOf,"['memberOfPoliticalParty', 'memberOfMovement', 'memberOfParliament', 'memberOf']"
+memberOfMovement,['memberOfMovement']
+memberOfParliament,['memberOfParliament']
+memberOfPoliticalParty,['memberOfPoliticalParty']
+militaryBranch,['militaryBranch']
+participantOf,['participantOf']
+positionHeld,['positionHeld']
+recordLabel,['recordLabel']
+religion,"['religiousOrder', 'religion']"
+religiousOrder,['religiousOrder']
+sponsoredBy,['sponsoredBy']
+team,"['sportsTeam', 'team']"
+sportsTeam,['sportsTeam']
+advisor,"['advisor', 'doctoralAdvisor']"
+doctoralAdvisor,['doctoralAdvisor']
+consecrator,['consecrator']
+influencedBy,['influencedBy']
+inspiredBy,['inspiredBy']
+namedAfter,['namedAfter']
+partner,"['partner', 'professionalPartner', 'sportsPartner']"
+professionalPartner,['professionalPartner']
+sportsPartner,['sportsPartner']
+familyMember,"['relative', 'stepParent', 'mother', 'spouse', 'sibling', 'child', 'familyMember', 'parent', 'father']"
+parent,"['stepParent', 'parent', 'mother', 'father']"
+father,['father']
+mother,['mother']
+stepParent,['stepParent']
+child,['child']
+relative,['relative']
+sibling,['sibling']
+spouse,['spouse']
+replacedBy,['replacedBy']
+replaces,['replaces']
+student,"['student', 'doctoralStudent']"
+doctoralStudent,['doctoralStudent']
+studentOf,['studentOf']
