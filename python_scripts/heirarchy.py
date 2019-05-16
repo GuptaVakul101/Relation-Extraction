@@ -37,7 +37,11 @@ def write_dictionaries(dict,outfile):
     with open(outfile, 'w+') as outfile:
         writecsv = csv.writer(outfile, delimiter=',')
         for key, val in dict.items():
-            writecsv.writerow([key, val])
+            list = []
+            list.append(key)
+            for item in val:
+                list.append(item)
+            writecsv.writerow(list)
 
 if __name__ == '__main__':
     dper = generate_dictionary(dper_file)

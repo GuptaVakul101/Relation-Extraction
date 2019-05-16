@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from .forms import *
 from .models import Object
+import random
 
 def index(request):
     if request.method == "POST":
@@ -8,14 +9,69 @@ def index(request):
         if form.is_valid():
             relation = form.cleaned_data['relation']
             NumberOfResults = form.cleaned_data['NumberOfResults']
-            result = Object.objects.filter(relation=relation)
-            result = result.order_by('?')
+            result_relation = []
+            with open("./../heirarchy_mapping/dloc_heirarchy.csv", "r") as f:
+                for line in f:
+                    if relation == line.split(',')[0]:
+                        for item in line.split(',')[1:]:
+                            print(item)
+                            result_relation.append(item)
+            with open("./../heirarchy_mapping/dper_heirarchy.csv", "r") as f:
+                for line in f:
+                    if relation == line.split(',')[0]:
+                        for item in line.split(',')[1:]:
+                            print(item)
+                            result_relation.append(item)
+            with open("./../heirarchy_mapping/dorg_heirarchy.csv", "r") as f:
+                for line in f:
+                    if relation == line.split(',')[0]:
+                        for item in line.split(',')[1:]:
+                            print(item)
+                            result_relation.append(item)
+            with open("./../heirarchy_mapping/wloc_heirarchy.csv", "r") as f:
+                for line in f:
+                    if relation == line.split(',')[0]:
+                        for item in line.split(',')[1:]:
+                            print(item)
+                            result_relation.append(item)
+            with open("./../heirarchy_mapping/wper_heirarchy.csv", "r") as f:
+                for line in f:
+                    if relation == line.split(',')[0]:
+                        for item in line.split(',')[1:]:
+                            print(item)
+                            result_relation.append(item)
+            with open("./../heirarchy_mapping/worg_heirarchy.csv", "r") as f:
+                for line in f:
+                    if relation == line.split(',')[0]:
+                        for item in line.split(',')[1:]:
+                            print(item)
+                            result_relation.append(item)
+            result = Object.objects.filter(relation__in=result_relation)
+            result = result.distinct()
             result = result[0:NumberOfResults]
             return render(request, 'home/index.html', {'form' : form, 'result': result})
     else:
         form = SearchForm()
-        all_relations = Object.objects.values_list('relation', flat=True)
-        all_relations = all_relations.distinct()
+        all_relations = list(Object.objects.values_list('relation', flat=True))
+        with open("./../heirarchy_mapping/dloc_heirarchy.csv", "r") as f:
+            for line in f:
+                all_relations.append(line.split(',')[0])
+        with open("./../heirarchy_mapping/dper_heirarchy.csv", "r") as f:
+            for line in f:
+                all_relations.append(line.split(',')[0])
+        with open("./../heirarchy_mapping/dorg_heirarchy.csv", "r") as f:
+            for line in f:
+                all_relations.append(line.split(',')[0])
+        with open("./../heirarchy_mapping/wloc_heirarchy.csv", "r") as f:
+            for line in f:
+                all_relations.append(line.split(',')[0])
+        with open("./../heirarchy_mapping/wper_heirarchy.csv", "r") as f:
+            for line in f:
+                all_relations.append(line.split(',')[0])
+        with open("./../heirarchy_mapping/worg_heirarchy.csv", "r") as f:
+            for line in f:
+                all_relations.append(line.split(',')[0])
+        all_relations = list(set(all_relations))
         return render(request, 'home/index.html', {'form' : form, 'all_relations': all_relations})
 
 def fill_data(request):
