@@ -24,7 +24,7 @@
     <link rel="stylesheet" href="css/style.css">
 
 </head>
-<body>
+<body onload="myFunction3()">
 
     <div class="site-wrap">
 
@@ -43,189 +43,221 @@
 
                         <div class="form-search-wrap" data-aos="fade-up" data-aos-delay="200">
                             <!-- <form method="post"> -->
-                                <div class="row align-items-center">
-                                    <div class="col-lg-12 mb-4 mb-xl-0 col-xl-4">
-                                        <div class="select-wrap">
-                                            <span class="icon"><span class="icon-keyboard_arrow_down"></span></span>
-                                            <select class="form-control rounded" name="" id="type">
-                                                <option value="">WIKIPEDIA</option>
-                                                <option value="">DBPEDIA</option>
-                                                <option value="">WIKIDATA</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-12 mb-4 mb-xl-0 col-xl-3">
-                                        <div class="select-wrap">
-                                            <span class="icon"><span class="icon-keyboard_arrow_down"></span></span>
-                                            <select class="form-control rounded" name="" id="version">
-                                                <option value="">v 1.0</option>
-                                                <option value="">v 1.1</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-12 mb-4 mb-xl-0 col-xl-3">
-                                        <div class="select-wrap">
-                                            <span class="icon"><span class="icon-keyboard_arrow_down"></span></span>
-                                            <select class="form-control rounded" name="" id="category">
-                                                <option value="">PERSON</option>
-                                                <option value="">LOCATION</option>
-                                                <option value="">ORGANISATION</option>
-                                                <option value="">WHOLE</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-12 col-xl-2 ml-auto text-right">
-                                        <input onclick="myFunction()" type="submit" class="btn btn-primary btn-block rounded" value="Search">
+                            <div class="row align-items-center">
+                                <div class="col-lg-12 mb-4 mb-xl-0 col-xl-6">
+                                    <div class="select-wrap">
+                                        <span class="icon"><span class="icon-keyboard_arrow_down"></span></span>
+                                        <select onchange = "myFunction2();" class="form-control rounded" name="" id="type">
+                                            <option value="">WIKIPEDIA</option>
+                                            <option value="">DBPEDIA</option>
+                                            <option value="">WIKIDATA</option>
+                                            <option value="">DBPEDIA WIKIDATA HIERARCHY</option>
+                                            <option value="">DBPEDIA WIKIDATA INFOBOX HIERARCHY</option>
+                                        </select>
                                     </div>
                                 </div>
-                            <!-- </form> -->
+                                <!-- <div class="col-lg-12 mb-4 mb-xl-0 col-xl-3">
+                                <div class="select-wrap">
+                                <span class="icon"><span class="icon-keyboard_arrow_down"></span></span>
+                                <select class="form-control rounded" name="" id="version">
+                                <option value="">v 1.0</option>
+                                <option value="">v 1.1</option>
+                            </select>
+                        </div>
+                    </div> -->
+                    <div class="col-lg-12 mb-4 mb-xl-0 col-xl-4">
+                        <div class="select-wrap">
+                            <span class="icon"><span class="icon-keyboard_arrow_down"></span></span>
+                            <select class="form-control rounded" name="" id="category">
+                                <option value="">PERSON</option>
+                                <option value="">LOCATION</option>
+                                <option value="">ORGANISATION</option>
+                                <option value="">WHOLE</option>
+                            </select>
                         </div>
                     </div>
-                </div>
-            </div>
-        </div>
-
-    <footer class="site-footer">
-        <div class="container">
-            <div class="row text-center">
-                <div class="col-md-12">
-                    <div class="border-top pt-2">
-                        <p>
-                            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                            <!-- Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank" >Colorlib</a> -->
-                            This site is made by Vakul Gupta, Lavish Gulati and Akshay Parekh.
-                            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                        </p>
+                    <div class="col-lg-12 col-xl-2 ml-auto text-right">
+                        <input onclick="myFunction()" type="submit" class="btn btn-primary btn-block rounded" value="Search">
                     </div>
                 </div>
+                <!-- </form> -->
             </div>
         </div>
-    </footer>
+    </div>
+</div>
+</div>
+
+<footer class="site-footer">
+    <div class="container">
+        <div class="row text-center">
+            <div class="col-md-12">
+                <div class="border-top pt-2">
+                    <p>
+                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                        <!-- Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank" >Colorlib</a> -->
+                        This site is made by Vakul Gupta, Lavish Gulati and Akshay Parekh.
+                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
 </div>
 
 <script>
 function myFunction() {
+
     var type = document.getElementById("type");
-    var version = document.getElementById("version");
     var category = document.getElementById("category");
     var str_type = type.options[type.selectedIndex].text;
-    var str_version = version.options[version.selectedIndex].text;
     var str_category = category.options[category.selectedIndex].text;
     var back_image = document.getElementById("back_image");
     if(str_type == "WIKIDATA"){
-
-        back_image.setAttribute("style","background-image: url(images/Wikidata.png);");
-        if(str_version == "v 1.0"){
-            if(str_category == "PERSON"){
-                // document.getElementById("show_data").innerHTML = "<include-polyfill href = 'in/v1.0/inP.html'>";
-                // document.getElementById("show_data").innerHTML = '<object type="text/html" data="in/v1.0/inP.html" ></object>';
-                document.getElementById("show_data").innerHTML = '<object data="in/v1.0/inP.html" ></object>';
-
-            }
-            if(str_category == "LOCATION"){
-
-            }
-            if(str_category == "ORGANISATION"){
-
-            }
-            if(str_category == "WHOLE"){
-
-            }
+        if(str_category == "PERSON"){
+            window.location = 'wd/v1.1/wdP.html';
         }
-        if(str_version == "v 1.1"){
-            if(str_category == "PERSON"){
-                // document.getElementById("show_data").innerHTML = "<include-polyfill href = 'in/v1.0/inP.html'>";
-                // document.getElementById("show_data").innerHTML = '<object type="text/html" data="in/v1.0/inP.html" ></object>';
-                document.getElementById("show_data").innerHTML = '<object data="in/v1.0/inP.html" ></object>';
-
-            }
-            if(str_category == "LOCATION"){
-
-            }
-            if(str_category == "ORGANISATION"){
-
-            }
-            if(str_category == "WHOLE"){
-
-            }
+        if(str_category == "LOCATION"){
+            window.location = 'wd/v1.1/wdL.html';
+        }
+        if(str_category == "ORGANISATION"){
+            window.location = 'wd/v1.1/wdO.html';
+        }
+        if(str_category == "WHOLE"){
+            window.location = 'wd/v1.1/wd.html';
         }
     }
     if(str_type == "DBPEDIA"){
-        back_image.setAttribute("style","background-image: url(images/DBpedia.png);");
-        if(str_version == "v 1.0"){
-            if(str_category == "PERSON"){
-                // document.getElementById("show_data").innerHTML = "<include-polyfill href = 'in/v1.0/inP.html'>";
-                // document.getElementById("show_data").innerHTML = '<object type="text/html" data="in/v1.0/inP.html" ></object>';
-                document.getElementById("show_data").innerHTML = '<object data="in/v1.0/inP.html" ></object>';
-
-            }
-            if(str_category == "LOCATION"){
-
-            }
-            if(str_category == "ORGANISATION"){
-
-            }
-            if(str_category == "WHOLE"){
-
-            }
+        if(str_category == "PERSON"){
+            window.location = 'db/v1.1/dbP.html';
         }
-        if(str_version == "v 1.1"){
-            if(str_category == "PERSON"){
-                // document.getElementById("show_data").innerHTML = "<include-polyfill href = 'in/v1.0/inP.html'>";
-                // document.getElementById("show_data").innerHTML = '<object type="text/html" data="in/v1.0/inP.html" ></object>';
-                document.getElementById("show_data").innerHTML = '<object data="in/v1.0/inP.html" ></object>';
-
-            }
-            if(str_category == "LOCATION"){
-
-            }
-            if(str_category == "ORGANISATION"){
-
-            }
-            if(str_category == "WHOLE"){
-
-            }
+        if(str_category == "LOCATION"){
+            window.location = 'db/v1.1/dbL.html';
+        }
+        if(str_category == "ORGANISATION"){
+            window.location = 'db/v1.1/dbO.html';
+        }
+        if(str_category == "WHOLE"){
+            window.location = 'db/v1.1/db.html';
         }
     }
     if(str_type == "WIKIPEDIA"){
-        back_image.setAttribute("style","background-image: url(images/wikipedia.png);");
-        if(str_version == "v 1.0"){
-            if(str_category == "PERSON"){
-                // document.getElementById("show_data").innerHTML = "<include-polyfill href = 'in/v1.0/inP.html'>";
-                // document.getElementById("show_data").innerHTML = '<object type="text/html" data="in/v1.0/inP.html" ></object>';
-                document.getElementById("show_data").innerHTML = '<object data="in/v1.0/inP.html" ></object>';
-
-            }
-            if(str_category == "LOCATION"){
-
-            }
-            if(str_category == "ORGANISATION"){
-
-            }
-            if(str_category == "WHOLE"){
-
-            }
+        if(str_category == "PERSON"){
+            window.location = 'in/v1.1/inP.html';
         }
-        if(str_version == "v 1.1"){
-            if(str_category == "PERSON"){
-                // document.getElementById("show_data").innerHTML = "<include-polyfill href = 'in/v1.0/inP.html'>";
-                // document.getElementById("show_data").innerHTML = '<object type="text/html" data="in/v1.0/inP.html" ></object>';
-                document.getElementById("show_data").innerHTML = '<object data="in/v1.0/inP.html" ></object>';
-
-            }
-            if(str_category == "LOCATION"){
-
-            }
-            if(str_category == "ORGANISATION"){
-
-            }
-            if(str_category == "WHOLE"){
-
-            }
+        if(str_category == "LOCATION"){
+            window.location = 'in/v1.1/inL.html';
+        }
+        if(str_category == "ORGANISATION"){
+            window.location = 'in/v1.1/inO.html';
+        }
+        if(str_category == "WHOLE"){
+            window.location = 'in/v1.1/in.html';
+        }
+    }
+    if(str_type == "DBPEDIA WIKIDATA HIERARCHY"){
+        if(str_category == "RADIAL"){
+            window.location = 'one/dbwd/radial.html';
+        }
+        if(str_category == "TREE"){
+            window.location = 'one/dbwd/tree.html';
+        }
+    }
+    if(str_type == "DBPEDIA WIKIDATA INFOBOX HIERARCHY"){
+        if(str_category == "RADIAL"){
+            window.location = 'one/dbwdin/radial.html';
+        }
+        if(str_category == "TREE"){
+            window.location = 'one/dbwdin/tree.html';
         }
     }
 }
+function myFunction2(){
+    var selected_item = $('#type option:selected').text();
+    if(selected_item == "DBPEDIA"){
+        var option1 = document.createElement("option");
+        option1.text = "PERSON";
+        var option2 = document.createElement("option");
+        option2.text = "LOCATION";
+        var option3 = document.createElement("option");
+        option3.text = "ORGANISATION";
+        var option4 = document.createElement("option");
+        option4.text = "WHOLE";
+        var select = document.getElementById("category");
+        select.options.length=0;
+        select.appendChild(option1);
+        select.appendChild(option2);
+        select.appendChild(option3);
+        select.appendChild(option4);
+    }
+    if(selected_item == "WIKIPEDIA"){
+        var option1 = document.createElement("option");
+        option1.text = "PERSON";
+        var option2 = document.createElement("option");
+        option2.text = "LOCATION";
+        var option3 = document.createElement("option");
+        option3.text = "ORGANISATION";
+        var option4 = document.createElement("option");
+        option4.text = "WHOLE";
+        var select = document.getElementById("category");
+        select.options.length=0;
+        select.appendChild(option1);
+        select.appendChild(option2);
+        select.appendChild(option3);
+        select.appendChild(option4);
+    }
+    if(selected_item == "WIKIDATA"){
+        var option1 = document.createElement("option");
+        option1.text = "PERSON";
+        var option2 = document.createElement("option");
+        option2.text = "LOCATION";
+        var option3 = document.createElement("option");
+        option3.text = "ORGANISATION";
+        var option4 = document.createElement("option");
+        option4.text = "WHOLE";
+        var select = document.getElementById("category");
+        select.options.length=0;
+        select.appendChild(option1);
+        select.appendChild(option2);
+        select.appendChild(option3);
+        select.appendChild(option4);
+    }
+    if(selected_item == "DBPEDIA WIKIDATA HIERARCHY"){
+        var option1 = document.createElement("option");
+        option1.text = "RADIAL";
+        var option2 = document.createElement("option");
+        option2.text = "TREE";
+        var select = document.getElementById("category");
+        select.options.length=0;
+        select.appendChild(option1);
+        select.appendChild(option2);
+    }
+    if(selected_item == "DBPEDIA WIKIDATA INFOBOX HIERARCHY"){
+        var option1 = document.createElement("option");
+        option1.text = "RADIAL";
+        var option2 = document.createElement("option");
+        option2.text = "TREE";
+        var select = document.getElementById("category");
+        select.options.length=0;
+        select.appendChild(option1);
+        select.appendChild(option2);
+    }
+}
+function myFunction3(){
+    back_image.setAttribute("style","background-image: url(images/background_image.jpg);");
+    myFunction2();
+}
 </script>
+<!-- <script type="text/javascript">
+// alert("123");
+// $('#type').on('change',function(){
+//     alert("nfksnki");
+//     var selected_item = $('#type option:selected').text();
+//     alert(selected_item);
+// });
+// alert("nsdknie");
+</script> -->
+
 <script src="js/jquery-3.3.1.min.js"></script>
 <script src="js/jquery-migrate-3.0.1.min.js"></script>
 <script src="js/jquery-ui.js"></script>
